@@ -3,7 +3,7 @@
 #include <string>
 #include <algorithm>
 #include <numeric>
-
+#include <bits/stdc++.h>
 using namespace std;
 
 int main()
@@ -66,5 +66,32 @@ int main()
         b[1] = 4;
         cout << (a == b) << endl;
         cout << (1==2==3) << endl;
+    }
+
+    {
+        map<int, int> m;
+        cout << m[0] << endl;
+        cout << m.size() << endl;
+    }
+
+    {
+        map<pair<int, int>, int> m;
+        m[{1,2}] +=1;
+        m[{1,2}] +=1;
+        cout << "msize:" << m.size()  <<":" << m[{1,2}] << endl;
+    }
+    {
+        auto lm = [](pair<int, int> a){ return a.first<10 + a.second;};
+        unordered_map<pair<int, int>, int, decltype(lm)> m(0, lm);
+        m[{1,2}] +=1;
+        m[{1,2}] +=1;
+        cout << "msize:" << m.size()  <<":" << m[{1,2}] << endl;
+    }
+    {
+        auto f = hash<int> {};
+        for(int i=0; i< 11; i++)
+            cout << f(i*100) << " ";
+        cout << endl;
+        cout << sizeof(size_t) << endl;
     }
 }
