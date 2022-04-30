@@ -81,7 +81,7 @@ int main()
         cout << "msize:" << m.size()  <<":" << m[{1,2}] << endl;
     }
     {
-        auto lm = [](pair<int, int> a){ return a.first<10 + a.second;};
+        auto lm = [](pair<int, int> a){ return a.first<<10 + a.second;};
         unordered_map<pair<int, int>, int, decltype(lm)> m(0, lm);
         m[{1,2}] +=1;
         m[{1,2}] +=1;

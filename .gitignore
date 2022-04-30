@@ -1,2 +1,9 @@
-*.dSYM
-*.out
+*
+!*.cpp
+!*.py
+!*.c
+!*.rs
+!*.go
+!Makefile
+!README.md
+!*.json
