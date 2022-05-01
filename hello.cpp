@@ -1,10 +1,15 @@
-#include <iostream>
-#include <vector>
-#include <string>
-#include <algorithm>
-#include <numeric>
-#include <bits/stdc++.h>
-using namespace std;
+// #include <iostream>
+// #include <vector>
+// #include <string>
+// #include <algorithm>
+// #include <numeric>
+// #include <bits/stdc++.h>
+// #include <set>
+// #include <map>
+// #include <unordered_map>
+// #include <unordered_set>
+// using namespace std;
+#include "stdc++.h"
 
 int main()
 {
@@ -93,5 +98,15 @@ int main()
             cout << f(i*100) << " ";
         cout << endl;
         cout << sizeof(size_t) << endl;
+    }
+
+    {
+        set<vector<int>> s;
+        s.insert(vector<int> {1,2,3});
+        s.insert(vector<int> {1,2,3,4});
+        s.insert(vector<int> {1,2,3});
+        s.insert(vector<int> {2,1,3});
+        cout << s.size() << endl;
+
     }
 }
