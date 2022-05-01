@@ -1,9 +1,9 @@
 *
-!*.cpp
-!*.py
-!*.c
-!*.rs
-!*.go
-!Makefile
-!README.md
-!*.json
+!**/*.cpp
+!**/*.py
+!**/*.c
+!**/*.rs
+!**/*.go
+!**/Makefile
+!**/README.md
+!**/*.json
