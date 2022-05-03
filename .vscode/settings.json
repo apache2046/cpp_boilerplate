@@ -79,6 +79,14 @@
         "cinttypes": "cpp",
         "map": "cpp",
         "set": "cpp",
-        "regex": "cpp"
+        "regex": "cpp",
+        "list": "cpp",
+        "span": "cpp"
+    },
+    "files.exclude": {
+        "**/*.dSYM": true,
+        "**/[0-9]":true,
+        "**/[0-9][0-9]":true,
+        "**/[0-9][0-9][0-9]":true,
     }
 }

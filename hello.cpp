@@ -109,4 +109,38 @@ int main()
         cout << s.size() << endl;
 
     }
+
+    {
+        auto a="abc", b= "abd";
+        cout << (a< b) << endl;
+    }
+    {
+        vector<string>  a= {"abc", "abd", "aba"};
+        auto lm = [](string & a, string & b){
+            return a.back() < b.back();
+        };
+        sort(a.begin(), a.end(), lm);
+        for(auto &item : a){
+            cout << item << " ";
+        }
+        
+        cout << endl;
+        string input1 = "ab1";
+        // auto _isalpha = [](const char &a){ return a>='a' && a<='z';};
+        cout << isalpha(input1.back()) << endl;
+    }
+
+    {
+        vector<int> a {2,1,3};
+        vector<int> b {22,12,32};
+
+        vector<int> c;
+        c.insert(c.end(), a.begin(), a.end());
+        c.insert(c.end(), b.begin(), b.end());
+        for (auto & n : c)
+            cout << n << " ";
+        cout << endl;
+
+
+    }
 }
