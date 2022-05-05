@@ -10,6 +10,22 @@
 // #include <unordered_set>
 // using namespace std;
 #include "stdc++.h"
+template<typename T>
+void print1d(T & container){
+    for(auto & item : container){
+        cout << item << " ";
+    }
+    cout << endl;
+}
+
+template<typename T>
+void print2d(T & container){
+    for(auto & row : container){
+        for(auto & col : row)
+            cout << col << " ";
+        cout << endl;
+    }
+}
 
 int main()
 {
@@ -86,7 +102,7 @@ int main()
         cout << "msize:" << m.size()  <<":" << m[{1,2}] << endl;
     }
     {
-        auto lm = [](pair<int, int> a){ return a.first<<10 + a.second;};
+        auto lm = [](pair<int, int> a){ return (a.first<<10) + a.second;};
         unordered_map<pair<int, int>, int, decltype(lm)> m(0, lm);
         m[{1,2}] +=1;
         m[{1,2}] +=1;
@@ -143,4 +159,40 @@ int main()
 
 
     }
+    {
+        struct sum
+        {
+            sum(int * t):total(t){};
+            int * total;
+            void operator()(int element)
+            {
+            *total+=element;
+            }
+        };
+
+        int total = 0;
+        sum s(&total);
+        int arr[] = {0, 1, 2, 3, 4, 5};
+        std::for_each(arr, arr+6, s);
+        cout << total << endl; // prints total = 15;
+
+    }
+
+    {
+        vector<int> d1 {2,1,3,4,5};
+        print1d(d1);
+
+        vector<vector<int>> d2 {{3,1,2},{0,2,1},{4,5,11}};
+        print2d(d2);
+
+        priority_queue<int> q1(d1.begin(), d1.end());
+        while(!q1.empty()){
+            cout << q1.top() <<" ";
+            q1.pop();
+        }
+        cout << endl;
+
+        priority_queue<int, vector<int>> q2(d1.begin(), d1.end());
+    }
+
 }
