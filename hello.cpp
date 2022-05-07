@@ -195,4 +195,26 @@ int main()
         priority_queue<int, vector<int>> q2(d1.begin(), d1.end());
     }
 
+    {
+        auto lm = [](const tuple<string, int> &a, const tuple<string, int> &b)
+        {
+            // auto &[v1, o1] = a;
+            // auto &[v2, o2] = b;
+            // return o1 > o2; // small value first
+            return get<1>(a) > get<1>(b);
+        };
+        priority_queue<tuple<string, int>, vector<tuple<string, int>>, decltype(lm)> q(lm);
+
+        q.push(make_tuple("abc", 2));
+        q.push(make_tuple("abc", 1));
+        q.push(make_tuple("abc", 3));
+
+        while (!q.empty())
+        {
+            auto &item = q.top();
+            auto &[v, o] = item;
+            cout << v << ": " << o << endl;
+            q.pop();
+        }
+    }
 }
