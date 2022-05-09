@@ -217,4 +217,28 @@ int main()
             q.pop();
         }
     }
+    {   
+
+        set<int> s {1,2,3};
+        cout << *(s.begin()) << endl;
+
+        auto lm = [](int *a, int *b){
+            return *a < *b;
+        };
+        set<int*, decltype(lm)> s2(lm);
+        int a[] = {2,3,4,5};
+        s2.insert(&a[0]);
+        s2.insert(&a[1]);
+        s2.insert(&a[2]);
+
+        cout << *(*(s2.begin())) << endl;
+    }
+    {
+        list<int> list1 { 7, 5, 16, 8 };
+
+        auto p = list1.erase(list1.begin());
+        cout << *p << endl;
+
+
+    }
 }
