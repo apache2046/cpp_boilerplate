@@ -238,6 +238,16 @@ int main()
 
         auto p = list1.erase(list1.begin());
         cout << *p << endl;
+    }
+
+    {
+        multiset<int> s;
+        s.insert(1);
+        s.insert(2);
+        s.insert(1);
+        cout << "multiset size:" << s.size() << endl;
+        s.erase(s.find(1));
+        cout << "multiset size:" << s.size() << endl;
 
 
     }
